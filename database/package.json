@@ -1,0 +1,16 @@
+{
+  "name": "groupme-stats-database",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "groupme": "^0.5.7",
+    "mongoose": "^3.8.16",
+    "ramda": "^0.5.0"
+  }
+}
