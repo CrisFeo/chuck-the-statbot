@@ -23,13 +23,14 @@ var messageSchema = mongoose.Schema({
 /* ==== Static Methods ==== */
 
 /** Parse a JSON data object into a message object **/
-messageSchema.statics.parseFromJSON = function (data) {
+messageSchema.statics.parse = function (data) {
   //Transform functions for the attachments field.
   var parseAttachmentData = function (attachmentData) {
+    var attachments = modelUtils.pickWithoutFields(["type"], attachmentData);
     return {
       type: attachmentData["type"],
-      data: modelUtils.pickWithoutFields(["type"], attachmentData).toJSON()
-    };
+      data: JSON.stringify(attachments)
+    }
   };
   var parseAllAttachmentData = R.map(parseAttachmentData);
   var getAttachmentData = R.get("attachments");

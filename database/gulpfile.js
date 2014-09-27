@@ -3,7 +3,7 @@ var jasmine = require('gulp-jasmine');
 
 gulp.task('run-tests', function () {
   return gulp
-    .src('spec/modelTests.js')
+    .src('spec/*.test.js')
     .pipe(jasmine());
 });
 
