@@ -15,8 +15,8 @@ var messageSchema = mongoose.Schema({
   system:       Boolean,
   favorited_by: [String],
   attachments:  [{
-    type: String,
-    data: String
+    attachment_type: String,
+    attachment_data: mongoose.Schema.Types.Mixed
   }]
 });
 
@@ -28,8 +28,8 @@ messageSchema.statics.parse = function (data) {
   var parseAttachmentData = function (attachmentData) {
     var attachments = modelUtils.pickWithoutFields(["type"], attachmentData);
     return {
-      type: attachmentData["type"],
-      data: JSON.stringify(attachments)
+      attachment_type: attachmentData["type"],
+      attachment_data: attachments
     }
   };
   var parseAllAttachmentData = R.map(parseAttachmentData);
