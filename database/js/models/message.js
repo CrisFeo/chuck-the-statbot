@@ -44,5 +44,6 @@ messageSchema.statics.parse = function (data) {
   return message;
 };
 
+
 /* ==== Module exports ==== */
 module.exports = mongoose.model("Message", messageSchema);

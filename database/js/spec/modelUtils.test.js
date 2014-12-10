@@ -1,3 +1,4 @@
+require('./customMatchers');
 var modelUtils = require('../models/modelUtils');
 
 var matchType = function (value) {

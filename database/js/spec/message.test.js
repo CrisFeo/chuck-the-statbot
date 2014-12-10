@@ -40,7 +40,7 @@ describe("Message model", function () {
 
   it("should parse basic properties", function () {
     var message = MessageModel.parse(MESSAGE_API_RESPONSE);
-    
+
     expect(message['id']).toEqual("1234567890");
     expect(message['source_guid']).toEqual("GUID");
     expect(message['created_at']).toEqual(1302623328);
